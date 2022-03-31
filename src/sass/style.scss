@@ -1,0 +1,790 @@
+$blue: #001965;
+$blue2: #005AD2;
+$blue3: #D9E6F8;
+$blue4: #2A4081;
+$blue5: #3A56A9;
+$blue6: #4E6ECD;
+$yellow: #EFA80D;
+$gray: #F7F6F5;
+$gray2: #f0f0f0;
+$gray3: #424242;
+$white: #ffffff;
+
+$theme-colors: (
+    'blue': $blue,
+    'blue2': $blue2,
+    'blue3': $blue3,
+    'yellow': $yellow,
+    'gray': $gray,
+    'gray2': $gray2,
+    'gray3': $gray3,
+    'white': $white,
+    'blue4': $blue4,
+    'blue5': $blue5,
+    'blue6': $blue6,
+);
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1600px
+);
+
+$container-max-widths: (
+    sm: 544px,
+    md: 736px,
+    lg: 920px,
+    xl: 1140px,
+    xxl: 1540px
+);
+
+@import 'node_modules/slick-carousel/slick/slick.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: 'ApisWeb';
+    src: url('../fonts/ApisWeb-Regular.woff2') format('woff2'),
+        url('../fonts/ApisWeb-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ApisWeb';
+    src: url('../fonts/ApisWeb-Bold.woff2') format('woff2'),
+        url('../fonts/ApisWeb-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+// editar-fonte
+$sizes: 12, 14, 16, 18, 24, 38;
+@each $size in $sizes {
+    .font-#{$size} {
+        font-size: $size + px;
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(sm) {
+        .font-sm-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(md) {
+        .font-md-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(lg) {
+        .font-lg-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(xl) {
+        .font-xl-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+@each $size in $sizes {
+    @include media-breakpoint-up(xxl) {
+        .font-xxl-#{$size} {
+            font-size: $size + px;
+        }
+    }
+}
+
+$weights: 400, 700, 500, 600;
+@each $weight in $weights {
+    .font-w#{$weight} {
+        font-weight: $weight;
+    }
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+* {
+    a:hover {
+        text-decoration: none;
+    }
+    &:focus {
+        outline: 0 !important;
+    }
+
+    font-family: 'ApisWeb', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: $gray;
+    color: $blue;
+    font-family: 'ApisWeb', sans-serif;
+    font-size: 15px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 20px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        font-size: 30px;
+    }
+}
+
+main {
+    overflow-x: hidden;
+}
+
+a > img {
+    pointer-events: none;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.underline {
+    text-decoration: underline!important;
+}
+
+.d-contents {
+    display: contents;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.anchor-link {
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    top: -70px;
+
+    @include media-breakpoint-up(lg) {
+        top: -62px;
+
+        @include media-breakpoint-up(xl) {
+            top: -97px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            top: -128px;
+        }
+
+        @media screen and (min-width: 1900px) {
+            top: -149px;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+
+section {
+    position: relative;
+}
+
+.navbar {
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 10px 15px;
+    z-index: 10!important;
+
+    @include media-breakpoint-up(xl) {
+        padding: 20px 15px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        padding: 20px 80px;
+    }
+    
+    .navbar-brand {
+        display: flex;
+        max-width: 84px;
+
+        @include media-breakpoint-up(lg) {
+            max-width: 100px;
+        }
+    }
+
+    .nav-link {
+        color: $white;
+
+        &.active {
+            text-decoration: underline;
+        }
+    }
+
+    .navbar-nav {
+        flex: 1;
+        flex-direction: row;
+        max-width: 920px;
+    }
+
+    .dropdown-toggle {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex: none;
+        padding: 0;
+        position: relative;
+        transition: all .3s ease-out;
+
+        span {
+            background: $white;
+            width: 20px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            transition: all .3s ease-out;
+            transform: translateY(-50%);
+        }
+
+        &::before {
+            content: '';
+            background: $white;
+            border: 0;
+            width: 20px;
+            height: 2px;
+            margin: 0;
+            position: absolute;
+            top: 7px;
+            left: 4px;
+            transition: all .3s ease-out;
+        }
+
+        &::after {
+            content: '';
+            background: $white;
+            border: 0;
+            width: 20px;
+            height: 2px;
+            margin: 0;
+            position: absolute;
+            bottom: 7px;
+            left: 4px;
+            transition: all .3s ease-out;
+        }
+    }
+
+    .dropdown-menu {
+        background: $blue!important;
+        border: 0;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0px 3px 3px #00000029;
+        min-width: 260px;
+        margin-top: 10px;
+        margin-right: -15px;
+        padding: 20px 0;
+    }
+
+    .dropdown-item {
+        background: transparent!important;
+        color: $white!important;
+    }
+}
+
+.btn-inscricao {
+    background: $blue2;
+    border-radius: 10px;
+    color: $white!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    line-height: 1;
+    height: 38px;
+    margin: 0 4px;
+    padding: 6px 0;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s ease-out;
+
+    &:hover {
+        background: #014092;
+    }
+    
+    @include media-breakpoint-up(xl) {
+        flex: none;
+        width: 170px;
+        height: 50px;
+        margin: 0;
+        position: static;
+    }
+}
+
+.inscricao-mobile-fixed {
+    background: $blue;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    max-width: 330px;
+    margin: 0 auto;
+    padding: 8px;
+    position: fixed;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    z-index: 1100;
+    transition: transform .3s ease-out;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+        &::before {
+            content: '';
+            background: $blue3;
+            width: 26%;
+            position: absolute;
+            top: 40%;
+            bottom: 0;
+            left: 46.6%;
+            z-index: -1;
+        }
+    }
+
+    .container {
+        padding-top: 17px;
+        padding-bottom: 0px;
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 66px;
+        }
+    }
+
+    .faixa {
+        position: relative;
+
+        p {
+            background-color: $blue3;
+
+            @include media-breakpoint-up(lg) {
+                margin: 0 110px 0 50px;
+                background-color: none;
+            }
+            @include media-breakpoint-up(xxl) {
+                margin: 0 160px 0 100px;
+            }
+            @media screen and (min-width: 1920px) {
+                margin: 0 120px 0 100px;
+            }
+        }
+    }
+}
+
+.sobre {
+    position: relative;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+        &::before {
+            content: '';
+            background: $blue3;
+            width: 26%;
+            position: absolute;
+            top: 300px;
+            bottom: 0;
+            left: 46.6%;
+            z-index: -1;
+
+            @include media-breakpoint-up (xl) {
+                top: 380px;
+            }
+        }
+    }
+
+    .sobre-bg {
+        max-width: 75vw;
+        position: absolute;
+        top: 39vw;
+        right: 0;
+        transform: translateX(10%);
+        z-index: -1;
+    }
+
+    .container {
+        padding-top: 52px;
+        padding-bottom: 0px;
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 18px;
+        }
+    }
+
+    .faixa {
+        position: relative;
+        padding: 40px;
+        background-color: $blue3;
+        margin-top: 0;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 180px;
+            background-color: transparent;
+            padding: 0px;
+            margin-top: -100px;
+        }
+
+        p,
+        h3 {
+            @include media-breakpoint-up(lg) {
+                margin: 0 110px 0 50px;
+            }
+            @include media-breakpoint-up(xxl) {
+                margin: 0 160px 0 100px;
+            }
+            @media screen and (min-width: 1920px) {
+                margin: 0 120px 0 100px;
+            }
+        }
+    }
+}
+
+.programa {
+    .text {
+        background-color: $blue;
+        padding-top: 64px;
+        padding-bottom: 55px;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 64px;
+            padding-bottom: 0px;
+        }
+
+        .img-mulher {
+            position: relative;
+            z-index: 2;
+            max-width: 95%;
+            transform: translateX(2.5%);
+
+            @include media-breakpoint-up(lg) {
+                transform: translateX(-100%);
+                left: 100%;
+                max-width: 40vw;
+            }
+        }
+
+        .text-right {
+            color: white;
+
+            h2 {
+                max-width: 550px;
+                z-index: 2;
+                margin-top: 0px;
+
+                @include media-breakpoint-up(lg) {
+                    margin-top: 60px;
+                }
+
+                @include media-breakpoint-up(xxl) {
+                    margin-top: 120px;
+                }
+            }
+
+            p {
+                max-width: 660px;
+            }
+        }
+
+        .linha-sobre {
+            position: absolute;
+            right: 100%;
+            z-index: 3;
+            top: -400px;
+        }
+
+        .text-bottom {
+            color: #001965;
+            position: relative;
+            margin-top: -50px;
+            z-index: 1;
+            padding: 92px 50px 40px;
+
+            @include media-breakpoint-up(md) {
+                padding: 92px 150px 80px 120px;
+            }
+
+            @include media-breakpoint-up(xl) {
+                margin-top: -80px;
+                padding: 115px 150px 75px 95px;
+            }
+            
+            &::after {
+                content: "";
+                height: 100%;
+                width: 100vw;
+                background-color: #d9e6f8;
+                position: absolute;
+                top: 0;
+                z-index: -1;
+                left: 0;
+                display: none;
+
+                @include media-breakpoint-up(lg) {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.localidades {
+    background-color: #F7F6F5;
+}
+
+.requisitos {
+    .container {
+        padding-top: 40px;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 80px;
+        }
+    }
+
+    h2:first-child {
+        margin-bottom: 60px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 100px;
+        }
+    }
+
+    .habilidades {
+        margin-bottom: 80px;
+
+        .card {
+            border-radius: 51px;
+            padding-bottom: 40px;
+            background: transparent;
+            height: 100%;
+            box-shadow: 0px 12px 12px #00000029;
+
+            @include media-breakpoint-up(xxl) {
+                padding-bottom: 50px;
+            }
+
+            img {
+                margin-top: -70px;
+                max-width: 100px;
+
+                @include media-breakpoint-up(xxl) {
+                    max-width: unset;
+                }
+            }
+
+            p {
+                line-height: 1.1;
+            }
+        }
+    }
+
+    h2:last-of-type {
+        margin-bottom: 0px;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 50px;
+        }
+    }
+
+    .competencias {
+        .card {
+            padding: 0px 20px 0;
+            height: 100%;
+            border-radius: 51px;
+            position: relative;
+            min-height: 170px;
+            justify-content: center;
+
+            @include media-breakpoint-up(sm) {
+                padding: 0px 40px 0;
+                min-height: 200px;
+            }
+
+            @include media-breakpoint-up(md) {
+                padding: 60px 40px 0;
+                justify-content: flex-start;
+            }
+
+            @include media-breakpoint-up(lg) {
+                min-height: 300px;
+            }
+        }
+
+        .comp2, .comp3, .comp4 {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 100%;
+                transform: translateX(50px);
+                width: 200px;
+                z-index: -1;
+                height: 100%;
+                display: none;
+
+                @include media-breakpoint-up(md) {
+                    display: block;
+                }
+            }
+        }
+
+        .comp2::before {
+            background-color: $blue4;
+        }
+
+        .comp3::before {
+            background-color: $blue5;
+            display: none;
+
+
+            @include media-breakpoint-up(lg) {
+                display: block;
+            }
+        }
+
+        .comp4::before {
+            background-color: $blue6;
+        }
+    }
+}
+
+.beneficios {
+
+    .img-beneficios {
+        width: 45.2vw;
+        margin-right: 20px;
+    }
+
+    .beneficios-bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        pointer-events: none;
+    }
+
+    .slider-beneficios {
+        max-width: 90vw;
+        position: relative;
+        z-index: 2;
+        margin: 0 auto;
+        margin: 50px auto;
+        
+        @include media-breakpoint-up(sm) {
+            padding: 0 55px;
+            max-width: 535px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin: none;
+            margin-left: 1vw;
+        }
+
+        @include media-breakpoint-up(xl) {
+            margin-left: 6vw;
+        }
+
+        .slick-arrow {
+            margin-top: 25px;
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+
+            &.slick-prev {
+                left: -8px;
+                transform: translateY(-50%);
+
+                @include media-breakpoint-up(lg) {
+                    left: 0;
+                }
+            }
+
+            &.slick-next {
+                right: -8px;
+                transform: translateY(-50%) scaleX(-1);
+
+                @include media-breakpoint-up(lg) {
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .card {
+        min-height: 250px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        padding: 50px 30px 0;
+        border-radius: 34px;
+        position: static;
+        z-index: 1;
+        background-color: #fff;
+        margin: 50px 0;
+
+        @include media-breakpoint-up(xl) {
+            min-height: 420px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -50px;
+            bottom: -50px;
+            left: 30px;
+            right: 30px;
+            border-radius: 34px;
+            border: 4px solid #D9E6F8;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            border-radius: 34px;
+            background-color: $blue3;
+        }
+    }
+}
+
+.etapas {
+    .container {
+        margin-top: 40px;
+
+        @include media-breakpoint-up(xxl) {
+            margin-top: 120px;
+        }
+    }
+}

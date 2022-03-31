@@ -1,0 +1,23 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "no-console": "off",
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "no-prototype-builtins": "off",
+        "semi": "off",
+        "no-extra-boolean-cast": "off"
+    }
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="434" viewBox="0 0 1920 434">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_1688" data-name="Retângulo 1688" width="1920" height="434" transform="translate(0 12960)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Retângulo_327" data-name="Retângulo 327" width="868" height="595" transform="translate(0 10231)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_de_máscara_44" data-name="Grupo de máscara 44" transform="translate(0 -12960)" clip-path="url(#clip-path)">
+    <g id="Grupo_3635" data-name="Grupo 3635">
+      <g id="Camada_2" data-name="Camada 2" transform="translate(-619.495 13051.3)">
+        <g id="Camada_1" data-name="Camada 1" transform="translate(1 1.24)">
+          <path id="Caminho_44" data-name="Caminho 44" d="M1,331.536C163.771,93.813,820.169,474.171,1124.316,250.99c166.407-122.078,241.639-41.951,274.5-1.4,21.815,26.709,148.508,155.919,371.129-.839s230.452-5.034,235.347,10.768c17.759,57.893,50.9,226.817,139.838,150.465S2297.693,1.24,2408.445,1.24c148.787,0,82.084,311.838,219.545,179.831" transform="translate(-1 -1.24)" fill="none" stroke="#f7f6f5" stroke-width="15"/>
+        </g>
+      </g>
+      <g id="Grupo_de_máscara_1" data-name="Grupo de máscara 1" transform="translate(0 2728.712)" clip-path="url(#clip-path-2)">
+        <g id="Camada_2-2" data-name="Camada 2" transform="translate(-619.495 10322.588)">
+          <g id="Camada_1-2" data-name="Camada 1" transform="translate(1 1.24)">
+            <path id="Caminho_44-2" data-name="Caminho 44" d="M1,331.536C163.771,93.813,820.169,474.171,1124.316,250.99c166.407-122.078,241.639-41.951,274.5-1.4,21.815,26.709,148.508,155.919,371.129-.839s230.452-5.034,235.347,10.768c17.759,57.893,50.9,226.817,139.838,150.465S2297.693,1.24,2408.445,1.24c148.787,0,82.084,311.838,219.545,179.831" transform="translate(-1 -1.24)" fill="none" stroke="#deb221" stroke-width="15"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
